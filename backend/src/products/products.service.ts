@@ -11,11 +11,12 @@ constructor(private prismaService: PrismaService){
 }
 
   create(createProductDto: CreateProductDto) {
-    this.prismaService.product.create({data: createProductDto})
+   return this.prismaService.product.create({data: createProductDto})
   }
 
   findAll() {
-    return `This action returns all products`;
+   return this.prismaService.product.findMany()
+    
   }
 
   findOne(id: number) {
