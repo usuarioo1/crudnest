@@ -1,14 +1,14 @@
-import { Button } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/button'
 import Link from 'next/link'
 import React from 'react'
 
 function HomePage() {
   return (
-    <div>
-      <h1>
+    <div className='flex justify-between'>
+      <h1 className='text-4xl font-bold'>
         NextNestAPP
       </h1>
-      <Link href='/products/new'>
+      <Link href='/products/new' className={buttonVariants()}>
       create Product</Link>
     </div>
   )
