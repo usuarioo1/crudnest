@@ -1,4 +1,4 @@
-import { ConflictException, Injectable, NotFoundException } from '@nestjs/common';
+import { ConflictException, Injectable, InternalServerErrorException, NotFoundException } from '@nestjs/common';
 import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
@@ -19,6 +19,8 @@ constructor(private prismaService: PrismaService){
         throw new ConflictException(`producto con nombre ${createProductDto.name} ya existe`)
       }
     }
+
+    throw new InternalServerErrorException()
    }
   }
 
