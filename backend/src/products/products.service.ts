@@ -6,6 +6,7 @@ import { Prisma } from '@prisma/client';
 @Injectable()
 export class ProductsService {
 
+  //repasar codigo backend
 constructor(private prismaService: PrismaService){
 
 }
