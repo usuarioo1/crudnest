@@ -1,5 +1,5 @@
 import { cache } from "react";
-
+//se crea este archivo para manejar las peticiones a la api
 export async function createProduct(productData: any) {
     const res = await fetch('http://localhost:4000/api/products', {
         method: 'POST',
