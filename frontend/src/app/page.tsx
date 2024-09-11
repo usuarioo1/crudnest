@@ -1,8 +1,9 @@
 import { Button, buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
-import React from "react";
 import { getProducts } from "./products/products.api";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+export const dynamic = 'force-dynamic'
 
 async function HomePage() {
   const products = await getProducts();
@@ -17,8 +18,8 @@ async function HomePage() {
         </Link>
       </div>
       <div className="grid grid-cols-4 gap-3">
-        {products.map((product) => (
-          <Card>
+        {products.map((product:any) => (
+          <Card key={product.id}>
             <CardHeader>
               <CardTitle>{product.name}</CardTitle>
             </CardHeader>
